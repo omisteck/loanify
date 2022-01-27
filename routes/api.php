@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+/*
+| API route Grouping adding version number to routes
+|
+*/
+
+Route::prefix("/v1")->group(function(){
+    Route::post('loan', [LoanController::class, 'store']);
 });
