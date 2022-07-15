@@ -1,0 +1,4 @@
+FROM /Layerfile
+
+# Expose website creates a unique link to view the website running in the server
+EXPOSE WEBSITE http://localhost:80
