@@ -25,6 +25,3 @@ RUN cp .env.example .env
 RUN php artisan key:generate
 RUN BACKGROUND php artisan serve --host 0.0.0.0 --port 80
 RUN php vendor/bin/phpunit
-
-# Expose website creates a unique link to view the website running in the server
-EXPOSE WEBSITE http://localhost:80
